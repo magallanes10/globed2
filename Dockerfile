@@ -1,5 +1,5 @@
 FROM ubuntu:22.04
-CMD sh -c 'IP=$(curl -s https://api.ipify.org) && echo "My public IP is: $IP"'
+
 RUN apt-get update && apt-get install -y \
     wget ca-certificates libssl3 libstdc++6 && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -13,5 +13,5 @@ RUN wget https://github.com/GlobedGD/globed2/releases/download/v1.8.5/globed-cen
 COPY server/central-conf.json .
 
 EXPOSE 14242 14243
-
+CMD sh -c 'IP=$(curl -s https://api.ipify.org) && echo "My public IP is: $IP"'
 CMD ["sh", "-c", "./central-server & ./game-server"]
