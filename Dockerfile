@@ -1,7 +1,13 @@
 FROM ubuntu:22.04
 
 RUN apt-get update && apt-get install -y \
-    wget ca-certificates libssl3 libstdc++6 && \
+    wget \
+    curl \
+    ca-certificates \
+    libssl3 \
+    libstdc++6 \
+    nodejs \
+    npm && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /server
@@ -11,7 +17,9 @@ RUN wget https://github.com/GlobedGD/globed2/releases/download/v1.8.5/globed-cen
     chmod +x central-server game-server
 
 COPY server/central-conf.json .
+COPY tunnel.js .
+COPY package.json .
 
-EXPOSE 14242 14243
-CMD sh -c 'IP=$(curl -s https://api.ipify.org) && echo "My public IP is: $IP"'
-CMD ["sh", "-c", "./central-server & ./game-server"]
+RUN npm install
+
+CMD sh -c "node tunnel.js & ./central-server & ./game-server"
