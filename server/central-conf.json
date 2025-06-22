@@ -66,9 +66,9 @@
     "argon_token": null,
     "skip_name_check": false,
     "refresh_interval": 3000,
-    "secret_key": "Insecure-ZYgCYPxfItPwUG8chRjaZsGaSVNi6oOj",
-    "secret_key2": "Insecure-DwrOTlZZsFpkciiwUi05NG3ilAzdN3AM",
-    "game_server_password": "Insecure-x7K3VY8kSW9RiKr8VYDbp2WCMpvFpNG1",
+    "secret_key": "ZYgCYPxfItPwUG8chRjaZsGaSVNi6oOj",
+    "secret_key2": "DwrOTlZZsFpkciiwUi05NG3ilAzdN3AM",
+    "game_server_password": "x7K3VY8kSW9RiKr8VYDbp2WCMpvFpNG1",
     "cloudflare_protection": false,
     "challenge_expiry": 30,
     "token_expiry": 86400
