@@ -1,12 +1,12 @@
 {
-  "name": "localtunnel-multi",
+  "name": "ngrok-server",
   "version": "1.0.0",
-  "main": "index.js",
-  "type": "commonjs",
+  "description": "Server with ngrok TCP tunnel",
+  "main": "ngrok.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node ngrok.js"
   },
   "dependencies": {
-    "localtunnel": "^2.0.2"
+    "ngrok": "^4.3.3"
   }
 }
