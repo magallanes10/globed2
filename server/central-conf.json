@@ -3,9 +3,9 @@
     "game_servers": [
         {
             "id": "example-server-you-can-delete-it",
-            "name": "Server name",
+            "name": "Rick GDPS CC",
             "address": "127.0.0.1:4202",
-            "region": "the nether"
+            "region": "PHILIPPINES"
         }
     ],
     "relays": [],
@@ -60,9 +60,9 @@
     "use_gd_api": false,
     "gd_api_account": 0,
     "gd_api_gjp": "",
-    "gd_api_url": "https://www.boomlings.com/database",
+    "gd_api_url": "https://rickgdps.xyz/datastore/",
     "use_argon": false,
-    "argon_url": "",
+    "argon_url": "https://globed2-production.up.railway.app/",
     "argon_token": null,
     "skip_name_check": false,
     "refresh_interval": 3000,
