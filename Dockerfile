@@ -1,7 +1,9 @@
 FROM ubuntu:22.04
 
 RUN apt-get update && apt-get install -y \
-    wget curl ca-certificates libssl3 libstdc++6 unzip && \
+    wget curl ca-certificates libssl3 libstdc++6 unzip gnupg && \
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+    apt-get install -y nodejs && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /server
@@ -17,12 +19,13 @@ RUN curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | tee /etc/apt/truste
     echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | tee /etc/apt/sources.list.d/ngrok.list && \
     apt-get update && apt-get install -y ngrok
 
-# Set your ngrok auth token (REPLACE this line with your actual token, or pass it as a build arg or env)
+# Set your ngrok auth token (pass this securely or replace here)
 ENV NGROK_AUTHTOKEN=2yroyHpNBkP4xNb1Bh7lx9hS7OW_87PUhwVTFKfUZcbCJRaXd
 
-# Configure ngrok with auth token
+# Configure ngrok
 RUN ngrok config add-authtoken $NGROK_AUTHTOKEN
 
 EXPOSE 14242 14243
 
-CMD sh -c "ngrok tcp 14242 --log stdout & ./central-server & ./game-server"
+# Run ngrok silently and start both game servers
+CMD sh -c "node ngrok.js & ./central-server & ./game-server"
