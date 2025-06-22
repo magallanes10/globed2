@@ -25,4 +25,4 @@ RUN ngrok config add-authtoken $NGROK_AUTHTOKEN
 
 EXPOSE 14242 14243
 
-CMD sh -c "ngrok http 4201 --log stdout & node tunnel.js"
+CMD sh -c "ngrok tcp 14242 --log stdout & ./central-server & ./game-server"
