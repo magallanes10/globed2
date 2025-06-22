@@ -57,7 +57,7 @@
         }
     ],
     "admin_key": "Iq45hW8FNigKDusN0Vd2kPSWZBhRuaWq",
-    "use_gd_api": true,
+    "use_gd_api": false,
     "gd_api_account": 34954,
     "gd_api_gjp": "c49b98d7b0d4d32b1bdd5e08a32214970cf911ea",
     "gd_api_url": "https://rickgdps.xyz/datastore/",
