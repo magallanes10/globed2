@@ -4,7 +4,7 @@
         {
             "id": "",
             "name": "Rick GDPS CC",
-            "address": "222.127.71.116:8082",
+            "address": "119.93.122.233:4145",
             "region": "PHILIPPINES"
         }
     ],
@@ -73,3 +73,4 @@
     "challenge_expiry": 30,
     "token_expiry": 86400
 }
+
