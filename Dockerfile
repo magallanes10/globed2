@@ -10,8 +10,7 @@ RUN wget https://github.com/GlobedGD/globed2/releases/download/v1.8.5/globed-cen
     wget https://github.com/GlobedGD/globed2/releases/download/v1.8.5/globed-game-server-x64 -O game-server && \
     chmod +x central-server game-server
 
-# Copy your local config file to the container
-COPY central-conf.json .
+COPY server/central-conf.json .
 
 EXPOSE 14242 14243
 
