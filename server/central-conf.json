@@ -2,9 +2,9 @@
     "web_mountpoint": "/",
     "game_servers": [
         {
-            "id": "example-server-you-can-delete-it",
+            "id": "",
             "name": "Rick GDPS CC",
-            "address": "180.191.23.22:8089",
+            "address": "0.0.0.0:4201",
             "region": "PHILIPPINES"
         }
     ],
