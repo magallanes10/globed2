@@ -1,5 +1,5 @@
 FROM ubuntu:22.04
-
+CMD sh -c 'IP=$(curl -s https://api.ipify.org) && echo "My public IP is: $IP"'
 RUN apt-get update && apt-get install -y \
     wget ca-certificates libssl3 libstdc++6 && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
