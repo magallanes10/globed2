@@ -17,8 +17,8 @@ RUN wget https://github.com/GlobedGD/globed2/releases/download/v1.8.5/globed-cen
     chmod +x central-server game-server
 
 COPY server/central-conf.json .
-COPY tunnel.js .
-COPY package.json .
+COPY server/tunnel.js .
+COPY server/package.json .
 
 RUN npm install
 
