@@ -62,7 +62,7 @@
     "gd_api_gjp": "",
     "gd_api_url": "https://rickgdps.xyz/datastore/",
     "use_argon": false,
-    "argon_url": "https://globed2-production.up.railway.app/",
+    "argon_url": "https://globed2-production-df93.up.railway.app/",
     "argon_token": null,
     "skip_name_check": false,
     "refresh_interval": 3000,
