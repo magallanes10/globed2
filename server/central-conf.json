@@ -2,10 +2,10 @@
     "web_mountpoint": "/",
     "game_servers": [
         {
-            "id": "",
-            "name": "Rick GDPS CC",
-            "address": "119.93.122.233:4145",
-            "region": "PHILIPPINES"
+            "id": "example-server-you-can-delete-it",
+            "name": "Server name",
+            "address": "127.0.0.1:4202",
+            "region": "PH"
         }
     ],
     "relays": [],
@@ -58,19 +58,18 @@
     ],
     "admin_key": "Iq45hW8FNigKDusN0Vd2kPSWZBhRuaWq",
     "use_gd_api": false,
-    "gd_api_account": 34954,
-    "gd_api_gjp": "c49b98d7b0d4d32b1bdd5e08a32214970cf911ea",
-    "gd_api_url": "https://rickgdps.xyz/datastore/",
+    "gd_api_account": 0,
+    "gd_api_gjp": "",
+    "gd_api_url": "https://www.boomlings.com/database",
     "use_argon": false,
-    "argon_url": "https://globed2-production-df93.up.railway.app/",
+    "argon_url": "",
     "argon_token": null,
     "skip_name_check": false,
     "refresh_interval": 3000,
-    "secret_key": "ZYgCYPxfItPwUG8chRjaZsGaSVNi6oOj",
-    "secret_key2": "DwrOTlZZsFpkciiwUi05NG3ilAzdN3AM",
-    "game_server_password": "x7K3VY8kSW9RiKr8VYDbp2WCMpvFpNG1",
+    "secret_key": "Insecure-ZYgCYPxfItPwUG8chRjaZsGaSVNi6oOj",
+    "secret_key2": "Insecure-DwrOTlZZsFpkciiwUi05NG3ilAzdN3AM",
+    "game_server_password": "Insecure-x7K3VY8kSW9RiKr8VYDbp2WCMpvFpNG1",
     "cloudflare_protection": false,
     "challenge_expiry": 30,
     "token_expiry": 86400
 }
-
