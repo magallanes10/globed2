@@ -21,4 +21,4 @@ EXPOSE 4201 4202
 # Start central and game server
 CMD ./central-server & \
     sleep 3 && \
-    ./game-server 0.0.0.0:4202 http://tramway.proxy.rlwy.net:22116 Insecure-x7K3VY8kSW9RiKr8VYDbp2WCMpvFpNG1
+    ./game-server 0.0.0.0:4202 http://centerbeam.proxy.rlwy.net:53077 Insecure-x7K3VY8kSW9RiKr8VYDbp2WCMpvFpNG1
