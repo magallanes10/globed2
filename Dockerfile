@@ -19,4 +19,4 @@ COPY server/central-conf.json .
 EXPOSE 4201 4202
 
 # Start servers sequentially (no sleep, only &&)
-CMD ./central-server & ./game-server 0.0.0.0:4202 http://trolley.proxy.rlwy.net:33787 x7K3VY8kSW9RiKr8VYDbp2WCMpvFpNG1
+CMD ./central-server & ./game-server 0.0.0.0:4202 https://globed2-production-df93.up.railway.app x7K3VY8kSW9RiKr8VYDbp2WCMpvFpNG1
