@@ -2,9 +2,9 @@
     "web_mountpoint": "/",
     "game_servers": [
         {
-            "id": "example-server-you-can-delete-it",
-            "name": "Server name",
-            "address": "127.0.0.1:4202",
+            "id": "",
+            "name": "RICK GDPS",
+            "address": "http://tramway.proxy.rlwy.net:22116",
             "region": "PH"
         }
     ],
