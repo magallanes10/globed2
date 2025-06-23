@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-# Install system dependencies only
+# Install required dependencies
 RUN apt-get update && apt-get install -y \
     wget curl ca-certificates libssl3 libstdc++6 unzip && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -12,10 +12,13 @@ RUN wget https://github.com/GlobedGD/globed2/releases/download/v1.8.5/globed-cen
     wget https://github.com/GlobedGD/globed2/releases/download/v1.8.5/globed-game-server-x64 -O game-server && \
     chmod +x central-server game-server
 
-# Copy only required config
+# Copy your central config
 COPY server/central-conf.json .
 
+# Expose ports
 EXPOSE 4201 4202
 
-# Run central server on port 4201, then game server on 4202 pointing to central
-CMD sh -c "./central-server & ./game-server 0.0.0.0:4202 http://127.0.0.1:4201 ccproject"
+# Start central and game server
+CMD ./central-server & \
+    sleep 3 && \
+    ./game-server 0.0.0.0:4202 http://tramway.proxy.rlwy.net:22116 Insecure-x7K3VY8kSW9RiKr8VYDbp2WCMpvFpNG1
