@@ -1,10 +1,8 @@
 FROM ubuntu:22.04
 
-# Install dependencies & Node.js
+# Install system dependencies only
 RUN apt-get update && apt-get install -y \
-    wget curl ca-certificates libssl3 libstdc++6 unzip gnupg && \
-    curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
-    apt-get install -y nodejs && \
+    wget curl ca-certificates libssl3 libstdc++6 unzip && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /server
@@ -14,23 +12,10 @@ RUN wget https://github.com/GlobedGD/globed2/releases/download/v1.8.5/globed-cen
     wget https://github.com/GlobedGD/globed2/releases/download/v1.8.5/globed-game-server-x64 -O game-server && \
     chmod +x central-server game-server
 
-# Install ngrok CLI
-RUN curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && \
-    echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | tee /etc/apt/sources.list.d/ngrok.list && \
-    apt-get update && apt-get install -y ngrok
-
-# Add ngrok authtoken
-ENV NGROK_AUTHTOKEN=2yroyHpNBkP4xNb1Bh7lx9hS7OW_87PUhwVTFKfUZcbCJRaXd
-RUN ngrok config add-authtoken $NGROK_AUTHTOKEN
-
-# Copy configs and Node app
+# Copy only required config
 COPY server/central-conf.json .
-COPY server/package.json .
-COPY server/ngrok.js .
 
-# Install Node dependencies (not ngrok npm)
-RUN npm install
+EXPOSE 4201 4202
 
-EXPOSE 14242 14243
-
-CMD sh -c "node ngrok.js & ./central-server & ./game-server"
+# Run central server on port 4201, then game server on 4202 pointing to central
+CMD sh -c "./central-server & ./game-server 0.0.0.0:4202 http://127.0.0.1:4201"
