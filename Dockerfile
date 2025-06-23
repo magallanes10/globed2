@@ -19,4 +19,6 @@ COPY server/central-conf.json .
 EXPOSE 4201 4202
 
 # Start central and game server
-CMD sh -c "./central-server & ./game-server"
+CMD ./central-server & \
+    sleep 3 && \
+    ./game-server 0.0.0.0:4202 https://globed2-production-df93.up.railway.app x7K3VY8kSW9RiKr8VYDbp2WCMpvFpNG1
