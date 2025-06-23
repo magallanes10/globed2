@@ -18,7 +18,5 @@ COPY server/central-conf.json .
 # Expose ports
 EXPOSE 4201 4202
 
-# Start central and game server
-CMD ./central-server & \
-    sleep 3 && \
-    ./game-server 0.0.0.0:4202 http://trolley.proxy.rlwy.net:33787 x7K3VY8kSW9RiKr8VYDbp2WCMpvFpNG1
+# Start servers sequentially (no sleep, only &&)
+CMD ./central-server & ./game-server 0.0.0.0:4202 http://trolley.proxy.rlwy.net:33787 x7K3VY8kSW9RiKr8VYDbp2WCMpvFpNG1
