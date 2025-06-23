@@ -18,4 +18,4 @@ COPY server/central-conf.json .
 EXPOSE 4201 4202
 
 # Run central server on port 4201, then game server on 4202 pointing to central
-CMD sh -c "./central-server & ./game-server 0.0.0.0:4202 http://127.0.0.1:4201"
+CMD sh -c "./central-server & ./game-server 0.0.0.0:4202 http://127.0.0.1:4201 ccproject"
