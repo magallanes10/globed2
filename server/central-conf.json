@@ -61,7 +61,7 @@
     "gd_api_account": 0,
     "gd_api_gjp": "",
     "gd_api_url": "https://www.boomlings.com/database",
-    "use_argon": true,
+    "use_argon": false,
     "argon_url": "https://globed2-production-df93.up.railway.app",
     "argon_token": null,
     "skip_name_check": false,
