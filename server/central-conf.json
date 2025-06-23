@@ -2,7 +2,7 @@
     "web_mountpoint": "/",
     "game_servers": [
         {
-            "id": "",
+            "id": "1",
             "name": "RICK GDPS",
             "address": "trolley.proxy.rlwy.net:33787",
             "region": "PH"
